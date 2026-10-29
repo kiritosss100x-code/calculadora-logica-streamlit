@@ -22,11 +22,26 @@ for i, v in enumerate(variables):
             st.session_state.expr += f" {v} "
 st.markdown("---")
 st.write("Operadores:")
-cols = st.columns(4)
-operadores = ["(^) AND", "(v) OR", "(¬) NOT", "(⊕) XOR"]
+col1, col2, col3, col4, col5, col6 = st.columns(6)
+with col1:
+    if st.button("(^) AND"):
+        st.session_state.expr += " ∧ "
+with col2:
+    if st.button("(v) OR"):
+        st.session_state.expr += " ∨ "
+with col3:
+    if st.button("(¬) NOT"):
+        st.session_state.expr += " ¬ "
+with col4:
+    if st.button("(⊕) XOR"):
+        st.session_state.expr += " ⊕ "
+with col5:
+    if st.button("(→) IMPLICA"):
+        st.session_state.expr += " → "
+with col6:
+    if st.button("(↔) BICONDICIONAL"):
+        st.session_state.expr += " ↔ "
 simbolos = ["AND", "OR", "NOT", "XOR", "->", "<->"]
-cols = st.columns(2)
-operadores = ["(→) IMPLICA", "(↔) BICONDICIONAL"]
 for i, op in enumerate(simbolos):
     with cols[i]:
         if st.button(operadores[i], key=f"btn_{op}", use_container_width=True):
