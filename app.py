@@ -38,7 +38,7 @@ with col4:
 with col5:
     if st.button("(→) IMPLICA"):
         st.session_state.expr += " → "
-col6, col7, col8, col9, col10 = st.columns(10)
+col6, col7, col8, col9, col10 = st.columns(5)
 with col6:
     if st.button("(↔) BICONDICIONAL"):
         st.session_state.expr += " ↔ "
