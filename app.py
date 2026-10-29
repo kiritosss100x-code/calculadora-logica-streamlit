@@ -22,7 +22,7 @@ for i, v in enumerate(variables):
             st.session_state.expr += f" {v} "
 st.markdown("---")
 st.write("Operadores:")
-col1, col2, col3, col4, col5, col6 = st.columns(6)
+col1, col2, col3, col4, st.columns(4)
 with col1:
     if st.button("(^) AND"):
         st.session_state.expr += " ∧ "
@@ -35,34 +35,35 @@ with col3:
 with col4:
     if st.button("(⊕) XOR"):
         st.session_state.expr += " ⊕ "
+col5, col6, col7, col8 = st.columns(4)
 with col5:
     if st.button("(→) IMPLICA"):
         st.session_state.expr += " → "
 with col6:
     if st.button("(↔) BICONDICIONAL"):
         st.session_state.expr += " ↔ "
-simbolos = ["AND", "OR", "NOT", "XOR", "->", "<->"]
-for i, op in enumerate(simbolos):
-    with cols[i]:
-        if st.button(operadores[i], key=f"btn_{op}", use_container_width=True):
-            st.session_state.expr += f" {op} "
 # Paréntesis y botones para borrar
-col1, col2, col3, col4 = st.columns(4)
-with col1:
+with col7:
     if st.button("(", use_container_width=True):
         st.session_state.expr += " ( "
-with col2:
+with col8:
     if st.button(")", use_container_width=True):
         st.session_state.expr += " ) "
-with col3:
+col9, col10 = st.columns(2)
+with col9:
     if st.button("🗑️ Limpiar Todo", use_container_width=True):
         st.session_state.expr = ""
-with col4:
+with col10:
     if st.button("⌫ Borrar Último", use_container_width=True):
         partes = st.session_state.expr.split()
         if partes:
             partes.pop()
         st.session_state.expr = " ".join(partes)
+simbolos = ["AND", "OR", "NOT", "XOR", "->", "<->"]
+for i, op in enumerate(simbolos):
+    with cols[i]:
+        if st.button(operadores[i], key=f"btn_{op}", use_container_width=True):
+            st.session_state.expr += f" {op} "
 # Expresión actual
 st.markdown("---")
 st.write("Expresión actual:")
