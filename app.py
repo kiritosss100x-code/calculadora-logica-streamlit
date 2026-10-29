@@ -363,12 +363,12 @@ st.markdown(
 operadores = ["AND", "OR", "NOT", "XOR", "->", "<->"]
 
 iconos_operadores = {
-    "AND": "∧",
-    "OR": "∨",
-    "NOT": "¬",
-    "XOR": "⊕",
-    "->": "→",
-    "<->": "↔",
+    "AND": " (∧) "
+    "OR": " (∨) "
+    "NOT": " (¬) "
+    "XOR": " (⊕) "
+    "->": " (→) "
+    "<->": " (↔) "
 }
 
 cols = st.columns(6)
