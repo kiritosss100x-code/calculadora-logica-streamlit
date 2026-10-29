@@ -5,13 +5,10 @@ import streamlit as st
 st.set_page_config(page_title="Calculadora Tabla de la Verdad", layout="centered")
 st.title("🧮 Calculadora de Tabla de la Verdad")
 st.subheader("GRUPO #3")
-st.write("Proyecto de programación: tablas de verdad.")
-st.write("Integrantes:")
-st.write("Reyes Cruzatty Danny Moises")
-st.write("Ferrin Cornejo Luis Anthony")
-st.write("Gonzalez Sala Carlos Xavier")
-st.write("Calculadora de expresiones lógicas")
-st.markdown("Construye tu expresión haciendo clic. El resultado se mostrará exclusivamente en 0 y 1.")
+st.write("Integrantes 👨‍💻:")
+st.write("Reyes Cruzatty Danny Moises, Ferrin Cornejo Luis Anthony y Gonzalez Sala Carlos Xavier")
+st.write("▪️Calculadora de expresiones lógicas")
+st.markdown("▪️Construye tu expresión haciendo clic. El resultado se mostrará exclusivamente en 0 y 1.")
 # Estado de la sesión
 if "expr" not in st.session_state:
     st.session_state.expr = ""
