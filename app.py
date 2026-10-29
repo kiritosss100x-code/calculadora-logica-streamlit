@@ -17,7 +17,7 @@ st.subheader("🛠️ Constructor de Expresión")
 cols = st.columns(6)
 variables = ["A", "B", "C", "D", "E", "F"]
 for i, v in enumerate(variables):
-    with cols[i % 6]:
+    with cols[i]:
         if st.button(v, key=f"btn_{v}", use_container_width=True):
             st.session_state.expr += f" {v} "
 st.markdown("---")
