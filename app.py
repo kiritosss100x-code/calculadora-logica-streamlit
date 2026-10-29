@@ -24,9 +24,9 @@ st.markdown("---")
 st.write("Operadores:")
 cols = st.columns(4)
 operadores = ["(^) AND", "(v) OR", "(¬) NOT", "(⊕) XOR"]
+simbolos = ["AND", "OR", "NOT", "XOR", "->", "<->"]
 cols = st.columns(2)
 operadores = ["(→) IMPLICA", "(↔) BICONDICIONAL"]
-simbolos = ["AND", "OR", "NOT", "XOR", "->", "<->"]
 for i, op in enumerate(simbolos):
     with cols[i]:
         if st.button(operadores[i], key=f"btn_{op}", use_container_width=True):
