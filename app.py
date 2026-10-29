@@ -5,7 +5,10 @@ import pandas as pd
 st.set_page_config(page_title="Calculadora Tabla Verdad", layout="centered")
 st.title(" Calculadora de Tabla de la Verdad")
 st.markdown("Construye tu expresión haciendo clic. El resultado se mostrará exclusivamente en 0 y 1.")
---- Estado de la ses
+endo clic. El nostrará **exclusivamente en y
+1**.")
+1**.")
+--- Estado de la sesión
 if "expr" not in st.session_state:
 st.session_state.expr = ""
 --- UI: Constructor de Expresión
