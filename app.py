@@ -289,6 +289,7 @@ st.markdown(
     """
 <div class="hero">
     <div class="hero-kicker">
+        Grupo # 3
         🌱 Laboratorio interactivo de lógica proposicional
     </div>
     <div class="hero-title">
