@@ -62,7 +62,7 @@ with col10:
 simbolos = ["AND", "OR", "NOT", "XOR", "->", "<->"]
 for i, op in enumerate(simbolos):
     with cols[i]:
-        if st.button(operadores[i], key=f"btn_{op}", use_container_width=True):
+        if st.button(op, key=f"btn_{op}", use_container_width=True):
             st.session_state.expr += f" {op} "
 # Expresión actual
 st.markdown("---")
