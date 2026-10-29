@@ -22,7 +22,7 @@ for i, v in enumerate(variables):
             st.session_state.expr += f" {v} "
 st.markdown("---")
 st.write("Operadores:")
-col1, col2, col3, col4, st.columns(4)
+col1, col2, col3, col4 = st.columns(4)
 with col1:
     if st.button("(^) AND"):
         st.session_state.expr += " ∧ "
