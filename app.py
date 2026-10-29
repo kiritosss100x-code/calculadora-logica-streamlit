@@ -1,10 +1,11 @@
 import streamlit as st
-import
+import re
 from itertools import product
 import pandas as pd
 st.set_page_config(page_title="Calculadora Tabla Verdad", layout="centered")
 st.title(" Calculadora de Tabla de la Verdad")
-st.markdown("Construye tu expresión haciendo clic. El resultado se mostrará exclusivamente en y 1.")
+st.markdown("Construye tu expresión haciendo clic. El nostrará **exclusivamente 0 en y
+1**.")
 --- Estado de la ses
 if "expr" not in st.session_state:
 st.session_state.expr = ""
