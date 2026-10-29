@@ -22,8 +22,10 @@ for i, v in enumerate(variables):
             st.session_state.expr += f" {v} "
 st.markdown("---")
 st.write("Operadores:")
-cols = st.columns(6)
-operadores = ["(^) AND", "(v) OR", "(¬) NOT", "(⊕) XOR", "(→) IMPLICA", "(↔) BICONDICIONAL"]
+cols = st.columns(4)
+operadores = ["(^) AND", "(v) OR", "(¬) NOT", "(⊕) XOR"]
+cols = st.columns(2)
+operadores = ["(→) IMPLICA", "(↔) BICONDICIONAL"]
 simbolos = ["AND", "OR", "NOT", "XOR", "->", "<->"]
 for i, op in enumerate(simbolos):
     with cols[i]:
