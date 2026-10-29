@@ -22,7 +22,7 @@ for i, v in enumerate(variables):
             st.session_state.expr += f" {v} "
 st.markdown("---")
 st.write("Operadores:")
-col1, col2, col3, col4, col5, col6 = st.columns(6)
+col1, col2, col3, col4, col5, col6, col7, col8, col9, col10 = st.columns(10)
 with col1:
     if st.button("(^) AND"):
         st.session_state.expr += " ∧ "
@@ -41,12 +41,26 @@ with col5:
 with col6:
     if st.button("(↔) BICONDICIONAL"):
         st.session_state.expr += " ↔ "
-col_limpiar, col_preview, col_gen = st.columns([2, 3, 2])
-with col_limpiar:
-    if st.button("🗑️ Limpiar", type="secondary", use_container_width=True):
+with col7:
+    if st.button("(" , use_container_width=True):
+        st.session_state.expr += " ( "
+with col8:
+    if st.button(")", use_container_width=True):
+        st.session_state.expr += " ) "
+with col9:
+    if st.button("🗑️ Limpiar Todo", use_container_width=True):
         st.session_state.expr = ""
-with col_preview:
-    st.code(st.session_state.expr.strip() or "(vacío)", language="text")
+with col10:
+    if st.button("⌫ Borrar Último", use_container_width=True):
+        partes = st.session_state.expr.strip().split()
+        if partes:
+            partes.pop()
+        st.session_state.expr = " ".join(partes)
+# Expresión actual
+st.markdown("---")
+st.write("Expresión actual:")
+st.code(st.session_state.expr.strip() or "(vacío)", language="text")
+st.markdown("---")
 # Lógica central
 def normalizar_expresion(expr: str) -> str:
     e = expr.strip().upper()
