@@ -38,7 +38,7 @@ with col4:
 with col5:
     if st.button("(→) IMPLICA"):
         st.session_state.expr += " → "
-col6, col7, col8, col9, col10 = st.columns(5)
+col6, col7, col8 = st.columns(3)
 with col6:
     if st.button("(↔) BICONDICIONAL"):
         st.session_state.expr += " ↔ "
@@ -48,6 +48,7 @@ with col7:
 with col8:
     if st.button(")", use_container_width=True):
         st.session_state.expr += " ) "
+col9, col10 = st.columns(2)
 with col9:
     if st.button("🗑️ Limpiar Todo", use_container_width=True):
         st.session_state.expr = ""
