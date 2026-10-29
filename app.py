@@ -28,7 +28,7 @@ simbolos = ["AND", "OR", "NOT", "XOR", "->", "<->"]
 for i, op in enumerate(simbolos):
     with cols[i]:
         if st.button(operadores[i], key=f"btn_{op}", use_container_width=True):
-        st.session_state.expr += f" {op} "
+            st.session_state.expr += f" {op} "
 # Paréntesis y botones para borrar
 col1, col2, col3, col4 = st.columns(4)
 with col1:
