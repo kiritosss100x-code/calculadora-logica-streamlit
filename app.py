@@ -59,11 +59,6 @@ with col10:
         if partes:
             partes.pop()
         st.session_state.expr = " ".join(partes)
-simbolos = ["AND", "OR", "NOT", "XOR", "->", "<->"]
-for i, op in enumerate(simbolos):
-    with cols[i]:
-        if st.button(op, key=f"btn_{op}", use_container_width=True):
-            st.session_state.expr += f" {op} "
 # Expresión actual
 st.markdown("---")
 st.write("Expresión actual:")
