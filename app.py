@@ -21,16 +21,26 @@ for i, v in enumerate(variables):
         if st.button(v, key=f"btn_{v}", use_container_width=True):
             st.session_state.expr += f" {v} "
 st.markdown("---")
-st.subheader("Operadores")
-cols = st.columns(6)
-operadores = ["AND", "OR", "NOT", "XOR", "->", "<->"]
-for i, op in enumerate(operadores):
-    with cols[i % 6]:
-        if st.button(op, key=f"btn_{op}", use_container_width=True):
-            if op == "NOT":
-                st.session_state.expr += " NOT "
-            else:
-                st.session_state.expr += f" {op} "
+st.write("Operadores:")
+col1, col2, col3, col4, col5, col6 = st.columns(6)
+with col1:
+    if st.button("(^) AND"):
+        st.session_state.expr += " ∧ "
+with col2:
+    if st.button("(v) OR"):
+        st.session_state.expr += " ∨ "
+with col3:
+    if st.button("(¬) NOT"):
+        st.session_state.expr += " ¬ "
+with col4:
+    if st.button("(⊕) XOR"):
+        st.session_state.expr += " ⊕ "
+with col5:
+    if st.button("(→) IMPLICA"):
+        st.session_state.expr += " → "
+with col6:
+    if st.button("(↔) BICONDICIONAL"):
+        st.session_state.expr += " ↔ "
 col_limpiar, col_preview, col_gen = st.columns([2, 3, 2])
 with col_limpiar:
     if st.button("🗑️ Limpiar", type="secondary", use_container_width=True):
