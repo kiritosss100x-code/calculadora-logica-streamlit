@@ -25,23 +25,23 @@ st.write("Operadores:")
 col1, col2, col3, col4 = st.columns(4)
 with col1:
     if st.button("(^) AND"):
-        st.session_state.expr += " ∧ "
+        st.session_state.expr += " AND "
 with col2:
     if st.button("(v) OR"):
-        st.session_state.expr += " ∨ "
+        st.session_state.expr += " OR "
 with col3:
     if st.button("(¬) NOT"):
-        st.session_state.expr += " ¬ "
+        st.session_state.expr += " NOT "
 with col4:
     if st.button("(⊕) XOR"):
-        st.session_state.expr += " ⊕ "
+        st.session_state.expr += " XOR "
 col5, col6, col7, col8 = st.columns(4)
 with col5:
     if st.button("(→) IMPLICA"):
-        st.session_state.expr += " → "
+        st.session_state.expr += " IMPLICA "
 with col6:
     if st.button("(↔) BICONDICIONAL"):
-        st.session_state.expr += " ↔ "
+        st.session_state.expr += " BICONDICIONAL "
 # Paréntesis y botones para borrar
 with col7:
     if st.button("(", use_container_width=True):
