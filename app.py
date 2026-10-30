@@ -25,16 +25,16 @@ st.write("Operadores:")
 col1, col2, col3, col4 = st.columns(4)
 with col1:
     if st.button("(^) AND"):
-        st.session_state.expr += " ^ "
+        st.session_state.expr += " AND "
 with col2:
     if st.button("(v) OR"):
-        st.session_state.expr += " v "
+        st.session_state.expr += " OR "
 with col3:
     if st.button("(¬) NOT"):
-        st.session_state.expr += " ¬ "
+        st.session_state.expr += " NOT "
 with col4:
     if st.button("(⊕) XOR"):
-        st.session_state.expr += " ⊕ "
+        st.session_state.expr += " XOR "
 col5, col6, col7, col8 = st.columns(4)
 with col5:
     if st.button("(→) IMPLICA"):
@@ -67,10 +67,10 @@ st.markdown("---")
 # Lógica central
 def normalizar_expresion(expr: str) -> str:
     e = expr.strip().upper()
-    e = re.sub(r"\b^\b", " ^ ", e)
-    e = re.sub(r"\bv\b", " or ", e)
-    e = re.sub(r"\b¬\b", " not ", e)
-    e = re.sub(r"\b⊕\b", " ^ ", e)
+    e = re.sub(r"\bAND\b", " and ", e)
+    e = re.sub(r"\bOR\b", " or ", e)
+    e = re.sub(r"\bNOT\b", " not ", e)
+    e = re.sub(r"\bXOR\b", " ^ ", e)
     # Implicación y bicondicional entre variables proposicionales.
     # La implicación P -> Q equivale a (not P or Q).
     # El bicondicional P <-> Q equivale a (P == Q).
