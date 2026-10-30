@@ -38,10 +38,10 @@ with col4:
 col5, col6, col7, col8 = st.columns(4)
 with col5:
     if st.button("(→) IMPLICA"):
-        st.session_state.expr += " IMPLICA "
+        st.session_state.expr += " → "
 with col6:
     if st.button("(↔) BICONDICIONAL"):
-        st.session_state.expr += " BICONDICIONAL "
+        st.session_state.expr += " ↔ "
 # Paréntesis y botones para borrar
 with col7:
     if st.button("(", use_container_width=True):
