@@ -67,7 +67,7 @@ st.markdown("---")
 # Lógica central
 def normalizar_expresion(expr: str) -> str:
     e = expr.strip().upper()
-    e = re.sub(r"\b^\b", " and ", e)
+    e = re.sub(r"\b^\b", " ^ ", e)
     e = re.sub(r"\bv\b", " or ", e)
     e = re.sub(r"\b¬\b", " not ", e)
     e = re.sub(r"\b⊕\b", " ^ ", e)
