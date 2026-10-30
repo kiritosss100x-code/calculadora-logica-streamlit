@@ -41,7 +41,7 @@ with col5:
         st.session_state.expr += " -> "
 with col6:
     if st.button("(↔) BICONDICIONAL"):
-        st.session_state.expr += " ↔ "
+        st.session_state.expr += " <-> "
 # Paréntesis y botones para borrar
 with col7:
     if st.button("(", use_container_width=True):
